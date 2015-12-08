@@ -196,7 +196,10 @@ H5P.MarkTheWords = (function ($, Question) {
       .replace(/@wrong/g, this.wrongAnswers.toString())
       .replace(/@missed/g, this.missedAnswers.toString());
 
-    this.setFeedback(scoreText, score, this.answers);
+    var modalData = this.params.feedbackModal;
+    modalData.contentId = this.contentId;  
+
+    this.setFeedback(scoreText, score, this.answers, modalData);
 
     this.triggerXAPIScored(score, this.answers, 'answered');
     this.trigger('resize');
