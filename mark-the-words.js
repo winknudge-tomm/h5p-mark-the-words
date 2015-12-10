@@ -123,7 +123,7 @@ H5P.MarkTheWords = (function ($, Question) {
           self.showButton('try-again');
         }
       }
-    });
+    }, true, this.params.buttonPosition);
 
     this.addButton('try-again', this.params.tryAgainButton, function () {
       self.clearAllMarks();
@@ -132,7 +132,7 @@ H5P.MarkTheWords = (function ($, Question) {
       self.hideButton('try-again');
       self.hideButton('show-solution');
       self.showButton('check-answer');
-    }, false);
+    }, false, this.params.buttonPosition);
 
     this.addButton('show-solution', this.params.showSolutionButton, function () {
       self.setAllSelectable(false);
@@ -142,7 +142,7 @@ H5P.MarkTheWords = (function ($, Question) {
       if (self.params.behaviour.enableRetry) {
         self.showButton('try-again');
       }
-    }, false);
+    }, false, this.params.buttonPosition);
   };
 
   /**
